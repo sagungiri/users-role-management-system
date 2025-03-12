@@ -1,0 +1,54 @@
+//text alignment utilities
+.text-align-left {
+  text-align: left !important;
+}
+
+.text-align-right {
+  text-align: right !important;
+}
+.text-align-center {
+  text-align: center !important;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+/* Text Transform */
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+/* Text Decoration */
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-line-through {
+  text-decoration: line-through !important;
+}
+
+.text-none {
+  text-decoration: none !important;
+}
+
+/* Text Overflow */
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Word Wrap */
+.text-wrap {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}

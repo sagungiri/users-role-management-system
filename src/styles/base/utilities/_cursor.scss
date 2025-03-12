@@ -1,0 +1,35 @@
+$cursors: (
+  auto: auto,
+  default: default,
+  pointer: pointer,
+  text: text,
+  move: move,
+  not-allowed: not-allowed,
+  help: help,
+  crosshair: crosshair,
+  cell: cell,
+  copy: copy,
+  grab: grab,
+  grabbing: grabbing,
+  resize-n: ns-resize,
+  resize-e: ew-resize,
+  resize-s: ns-resize,
+  resize-w: ew-resize,
+  resize-ne: ne-resize,
+  resize-nw: nw-resize,
+  resize-se: se-resize,
+  resize-sw: sw-resize,
+);
+
+@each $name, $value in $cursors {
+  .cursor-#{$name} {
+    cursor: $value !important;
+  }
+}
+
+// Responsive cursor
+@media (max-width: 600px) {
+  .cursor-pointer {
+    cursor: zoom-in !important; // Change cursor for mobile
+  }
+}

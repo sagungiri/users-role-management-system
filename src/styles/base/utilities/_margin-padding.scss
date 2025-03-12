@@ -1,0 +1,55 @@
+@use '../../abstracts/index' as *;
+
+// padding utility classes
+@each $size-name, $size-value in $size-values {
+  .p-#{$size-name} {
+    padding: $size-value !important;
+  }
+  .px-#{$size-name} {
+    padding-right: $size-value !important;
+    padding-left: $size-value !important;
+  }
+  .py-#{$size-name} {
+    padding-top: $size-value !important;
+    padding-bottom: $size-value !important;
+  }
+  .pl-#{$size-name} {
+    padding-left: $size-value !important;
+  }
+  .pr-#{$size-name} {
+    padding-right: $size-value !important;
+  }
+  .pt-#{$size-name} {
+    padding-top: $size-value !important;
+  }
+  .pb-#{$size-name} {
+    padding-bottom: $size-value !important;
+  }
+}
+
+// margin utility classes
+@each $size-name, $size-value in $size-values {
+  .m-#{$size-name} {
+    margin: $size-value !important;
+  }
+  .mx-#{$size-name} {
+    margin-right: $size-value !important;
+    margin-left: $size-value !important;
+  }
+  .my-#{$size-name} {
+    margin-top: $size-value !important;
+    margin-bottom: $size-value !important;
+  }
+  .ml-#{$size-name} {
+    margin-left: $size-value !important;
+  }
+  .mr-#{$size-name} {
+    margin-right: $size-value !important;
+  }
+  .mt-#{$size-name} {
+    margin-top: $size-value !important;
+  }
+  .mb-#{$size-name} {
+    margin-bottom: $size-value !important;
+  }
+}

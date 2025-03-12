@@ -1,0 +1,19 @@
+@mixin webkit-resizer {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    border: none;
+    width: 0.75rem;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-extra-light;
+      border-radius: 0.5rem;
+      background-clip: content-box;
+      border: 0.25rem solid transparent;
+    }
+  }
+}

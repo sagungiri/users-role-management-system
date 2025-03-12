@@ -1,0 +1,20 @@
+@use '../../abstracts/index' as *;
+
+// Generate position classes
+@each $position-name, $position-value in $positions {
+  .position-#{$position-name} {
+    position: #{$position-value} !important;
+  }
+
+  // Generate alignment classes for absolute and fixed positions
+  @if $position-name == "absolute" or $position-name == "fixed" {
+    @each $alignment-name, $alignment-values in $alignments {
+      .position-#{$position-name}_#{$alignment-name} {
+        position: #{$position-name} !important;
+        @each $property, $value in $alignment-values {
+          #{$property}: $value !important;
+        }
+      }
+    }
+  }
+}

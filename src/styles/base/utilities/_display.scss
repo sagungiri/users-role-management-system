@@ -1,0 +1,57 @@
+@use '../../abstracts/index' as *;
+
+
+// Generate Display Utility Classes
+@each $display, $value in $display-values {
+  .d-#{$display} {
+    display: #{$value} !important;
+  }
+}
+
+// Generate Flexbox Direction Utility Classes
+@each $direction, $value in $flex-direction-values {
+  .flex-#{$direction} {
+    flex-direction: #{$value} !important;
+  }
+}
+
+// Generate Justify Content Utility Classes
+@each $justify, $value in $flex-alignment-values {
+  .justify-content-#{$justify} {
+    justify-content: #{$value} !important;
+  }
+}
+
+// Generate Align Items Utility Classes
+@each $align, $value in $flex-alignment-values {
+  .align-items-#{$align} {
+    align-items: #{$value} !important;
+  }
+}
+
+// Generate Align Self Utility Classes
+@each $self, $value in $flex-alignment-values {
+  .align-self-#{$self} {
+    align-self: #{$value} !important;
+  }
+}
+
+// Generate Flex Wrap Utility Classes
+@each $wrap, $value in $flex-wrap-values {
+  .flex-#{$wrap} {
+    flex-wrap: #{$value} !important;
+  }
+}
+
+// Generate Flex Grow Utility Classes
+@each $grow, $value in $flex-values {
+  .flex-grow-#{$grow} {
+    flex-grow: #{$value} !important;
+  }
+}
+
+@each $shrink, $value in $flex-values {
+  .flex-shrink-#{$shrink} {
+    flex-shrink: #{$value} !important;
+  }
+}

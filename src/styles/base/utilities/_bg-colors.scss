@@ -1,0 +1,22 @@
+@use '../../abstracts/index' as *;
+
+//background utilities
+.bg-white {
+  background-color: white !important;
+}
+
+.bg-primary {
+  background-color: $color-primary !important;
+}
+
+.bg-secondary{
+  background-color:  $color-secondary !important;
+}
+
+.color-primary{
+  color: $color-primary !important;
+}
+
+.color-secondary{
+  color: $color-secondary !important;
+}

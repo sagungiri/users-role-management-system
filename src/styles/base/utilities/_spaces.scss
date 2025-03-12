@@ -1,0 +1,8 @@
+@use '../../abstracts/index' as *;
+
+// Generate gap utility classes
+@each $size, $value in $size-values {
+  .gap-#{$size} {
+    gap: #{$value} !important;
+  }
+}

@@ -1,0 +1,57 @@
+@use '../../abstracts/index' as *;
+
+
+// Generate utility classes for width and height
+@each $percent, $value in $utility-values {
+  // Width classes
+  .w-#{$percent} {
+    width: #{$value} !important;
+  }
+
+  .min-w-#{$percent} {
+    min-width: #{$value} !important;
+  }
+
+  .max-w-#{$percent} {
+    max-width: #{$value} !important;
+  }
+
+  // Height classes
+  .h-#{$percent} {
+    height: #{$value} !important;
+  }
+
+  .min-h-#{$percent} {
+    min-height: #{$value} !important;
+  }
+
+  .max-h-#{$percent} {
+    max-height: #{$value} !important;
+  }
+}
+
+//more width utilities
+.min-w-full {
+  min-width: 100vw !important;
+}
+
+.min-w-full {
+  min-width: 100vw !important;
+}
+
+.max-w-full {
+  max-width: 100vw !important;
+}
+
+// more height utilities
+.min-h-full {
+  min-height: 100vh !important;
+}
+
+.min-h-full {
+  min-height: 100vh !important;
+}
+
+.max-h-full {
+  max-height: 100vh !important;
+}

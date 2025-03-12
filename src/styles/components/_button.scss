@@ -1,0 +1,98 @@
+@use '../abstracts/index' as *;
+
+
+/* button.component.css */
+.button {
+  min-width: 7rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  padding: 0px, 1rem;
+  font-size: $fs-md;
+  outline: none;
+  border: none;
+  font-weight: $fw-bold;
+  &:hover {
+    font-weight: $fw-extra-bold;
+  }
+}
+
+.button-default{
+
+}
+
+.button-sm{
+
+}
+
+.button-md{
+
+}
+
+.buttton-l{
+  
+}
+
+.button-primary {
+  background-color: $color-primary;
+  color: $color-white;
+  &:hover {
+    outline: 0.25rem solid rgba($color-primary, 0.2);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba($color-primary, 0.6);
+  }
+}
+
+.button-secondary {
+  background-color: $color-white;
+  border: 1px solid rgba($color-text, 0.2);
+
+  &:hover {
+    outline: 0.25rem solid rgba($color-text, 0.1);
+    border: 1px solid rgba($color-text, 0.8);
+  }
+  &:active {
+    border: 1px solid rgba($color-text, 0.8);
+  }
+}
+
+.button-tertiary {
+  background-color: $color-white;
+  border: 1px solid rgba($color-text, 0.2);
+
+  &:hover {
+    outline: 0.25rem solid rgba($color-danger, 0.2);
+    color: $color-danger;
+    border: 1px solid $color-danger;
+  }
+}
+
+.button-danger {
+  background-color: rgba($color-danger, 0.9);
+  color: $color-white;
+  &:hover {
+    outline: 0.25rem solid rgba($color-danger, 0.2);
+    border: 1px solid $color-danger;
+  }
+  &:active {
+    background-color: rgba($color-danger, 0.8);
+  }
+  &:disabled {
+    background-color: rgba($color-danger, 0.6);
+    pointer-events: none;
+  }
+}
+
+.button-icon-secondary {
+  background-color: $color-white;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba($color-text, 0.2);
+  }
+  &:active {
+    background-color: $color-white;
+    color: $color-text;
+  }
+}
