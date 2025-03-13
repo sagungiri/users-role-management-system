@@ -1,6 +1,5 @@
 @use '../../abstracts/index' as *;
 
-
 // Generate Display Utility Classes
 @each $display, $value in $display-values {
   .d-#{$display} {

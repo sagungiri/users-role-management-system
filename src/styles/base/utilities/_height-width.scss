@@ -1,6 +1,5 @@
 @use '../../abstracts/index' as *;
 
-
 // Generate utility classes for width and height
 @each $percent, $value in $utility-values {
   // Width classes

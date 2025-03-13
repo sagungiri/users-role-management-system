@@ -1,6 +1,5 @@
 @use '../../abstracts/index' as *;
 
-
 // Generate Font Size Utility Classes
 @each $size, $value in $size-values {
   .fs-#{$size} {

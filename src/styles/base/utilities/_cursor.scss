@@ -18,7 +18,7 @@ $cursors: (
   resize-ne: ne-resize,
   resize-nw: nw-resize,
   resize-se: se-resize,
-  resize-sw: sw-resize,
+  resize-sw: sw-resize
 );
 
 @each $name, $value in $cursors {

@@ -9,34 +9,34 @@ $size-values: (
   default: $fs-default,
   l: $fs-l,
   xl: $fs-xl,
-  xxl: $fs-xxl,
+  xxl: $fs-xxl
 );
 
 // Define a map for position classes and their corresponding properties
 $positions: (
   relative: relative,
   absolute: absolute,
-  fixed: fixed,
+  fixed: fixed
 );
 
 // Define a map for position alignment
 $alignments: (
   top-left: (
     top: 0,
-    left: 0,
+    left: 0
   ),
   top-right: (
     top: 0,
-    right: 0,
+    right: 0
   ),
   bottom-left: (
     bottom: 0,
-    left: 0,
+    left: 0
   ),
   bottom-right: (
     bottom: 0,
-    right: 0,
-  ),
+    right: 0
+  )
 );
 
 // Utility class values
@@ -56,7 +56,7 @@ $utility-values: (
   max-content: max-content,
   fit-content: fit-content,
   initial: initial,
-  inherit: inherit,
+  inherit: inherit
 );
 
 // Display Utility Classes
@@ -74,7 +74,7 @@ $display-values: (
   table-cell: table-cell,
   contents: contents,
   list-item: list-item,
-  run-in: run-in,
+  run-in: run-in
 );
 
 // Flexbox Direction Utility Classes
@@ -82,25 +82,25 @@ $flex-direction-values: (
   row: row,
   row-reverse: row-reverse,
   column: column,
-  column-reverse: column-reverse,
+  column-reverse: column-reverse
 );
 
 // flex alignment Utility Classes
 $flex-alignment-values: (
   start: flex-start,
   center: center,
-  end: flex-end,
+  end: flex-end
 );
 
 // Other Flexbox Utility Classes
 $flex-wrap-values: (
   wrap: wrap,
   nowrap: nowrap,
-  wrap-reverse: wrap-reverse,
+  wrap-reverse: wrap-reverse
 );
 
 // Flex Grow and Shrink Utility Classes
 $flex-values: (
   0: 0,
-  1: 1,
+  1: 1
 );

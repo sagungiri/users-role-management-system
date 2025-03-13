@@ -9,14 +9,25 @@
   background-color: $color-primary !important;
 }
 
-.bg-secondary{
-  background-color:  $color-secondary !important;
+.bg-secondary {
+  background-color: $color-secondary !important;
+}
+.bg-main {
+  background-color: $color-main !important;
+}
+.bg-danger {
+  background-color: $color-danger !important;
 }
 
-.color-primary{
+.color-primary {
   color: $color-primary !important;
 }
-
-.color-secondary{
+.color-secondary {
   color: $color-secondary !important;
+}
+.color-main {
+  color: $color-main !important;
+}
+.color-danger {
+  color: $color-danger !important;
 }
