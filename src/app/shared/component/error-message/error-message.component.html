@@ -1,0 +1,7 @@
+<ng-container
+  *ngIf="control && control.invalid && (control.dirty || control.touched)"
+>
+  <ng-container *ngFor="let error of getResolvedErrorMessages(control)">
+    <span class="invalid-field color-danger fs-sm">{{ error }}</span>
+  </ng-container>
+</ng-container>

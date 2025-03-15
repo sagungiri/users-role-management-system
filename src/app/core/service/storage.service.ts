@@ -10,7 +10,7 @@ export class StorageService {
    * @param {string} key
    * @param {unknown} value
    */
-  setItem(key: string, value: unknown) {
+  setItem(key: string, value: unknown): void {
     try {
       sessionStorage.setItem(
         `${StorageService.APP_PREFIX}${key}`,
@@ -44,7 +44,14 @@ export class StorageService {
    *
    * @param {string} key
    */
-  removeItem(key: string) {
+  removeItem(key: string): void {
     sessionStorage.removeItem(`${StorageService.APP_PREFIX}${key}`);
+  }
+
+  /**
+   * Removes all item from session storage
+   */
+  clear(): void {
+    sessionStorage.clear();
   }
 }

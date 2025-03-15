@@ -1,0 +1,21 @@
+<!-- button.component.html -->
+<section class="d-flex align-items-center gap-xsm">
+  <ng-container *ngIf="config?.image">
+    <img
+      [src]="config.image?.src"
+      class="cursor-pointer {{ config.image?.cssClass }}"
+      (click)="click()"
+    />
+  </ng-container>
+
+  <ng-container *ngIf="config?.button">
+    <button
+      class="button {{ config.button?.cssClass }}"
+      [type]="config.button?.type || 'button'"
+      [disabled]="config.button?.isDisabled"
+      (click)="click()"
+    >
+      {{ config.button?.value }}
+    </button>
+  </ng-container>
+</section>

@@ -22,6 +22,7 @@
       "@core/*": ["src/app/core/*"],
       "@features/*": ["src/app/features/*"],
       "@shared/*": ["src/app/shared/*"],
+      "@auth/*": ["src/app/auth/*"],
     }
   },
   "angularCompilerOptions": {
