@@ -26,9 +26,15 @@
 - regex validation added in password with proper validation message
 
 - new implemented functionality
+
   - forbidden page added
   - basic dashboard layout with sidemenu and header added
   - manage user basic page setup
+
+- generic components added and updated their implementation
+  - added generic table component
+  - status badge component added
+  - pagination component added
 
 ## Changed
 

@@ -1,0 +1,26 @@
+<div class="table-wrap w-100 bg-white">
+  <table class="table">
+    <thead class="table-head">
+      <tr class="table-row">
+        <th
+          *ngFor="let column of columns.toArray()"
+          class="table-cell table-head-cell text-align-justify"
+        >
+          {{ column.header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let item of dataset" class="table-row table-body-row">
+        <td
+          *ngFor="let column of columns.toArray()"
+          class="table-cell table-body-cell"
+        >
+          <ng-container
+            *ngTemplateOutlet="column.templateRef; context: { $implicit: item }"
+          ></ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

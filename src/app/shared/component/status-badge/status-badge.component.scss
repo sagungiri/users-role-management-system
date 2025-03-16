@@ -1,0 +1,21 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.badge {
+  border-radius: 1rem;
+  &-primary {
+    border: 2px solid $color-primary;
+    color: $color-primary !important;
+  }
+  &-secondary {
+    border: 2px solid $color-secondary;
+    color: $color-secondary !important;
+  }
+  &-danger {
+    border: 2px solid $color-danger;
+    color: $color-danger !important;
+  }
+  &-default {
+    border: 2px solid $color-text;
+    color: $color-text !important;
+  }
+}

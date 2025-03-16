@@ -1,0 +1,109 @@
+@use '../../../../styles//abstracts/variables' as *;
+
+.pagination {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba($color-main, 0.75);
+  color: $color-text;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.page-count {
+  flex: 1 1 20%;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.page-pager {
+  flex: 1 1 80%;
+  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.page-skipper {
+  padding: 0 0.875rem;
+}
+
+.page-selector {
+  padding: 0 0.75rem;
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+.pager {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pager li {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+.pager a.page-link {
+  height: 26px;
+  min-width: 26px;
+  line-height: 26px;
+  padding: 0 6px;
+  border-radius: 3px;
+  margin: 6px 3px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  text-decoration: none;
+  vertical-align: bottom;
+  outline: 0;
+}
+
+a.page-link:hover {
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.jump-page {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.pager li.disabled a {
+  pointer-events: none;
+}
+div.disabled input,
+div.disabled i {
+  pointer-events: none;
+}
+
+.disabled {
+  //pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+.pager li a {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.pager li.active a {
+  background-color: $color-primary;
+  color: $color-white !important;
+  border: none;
+  box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.12);
+}
+.pager-sm {
+  justify-content: flex-end;
+  display: flex !important;
+}
+
+.page-link ion-icon {
+  font-size: 1rem;
+  margin: 5px 0;
+}

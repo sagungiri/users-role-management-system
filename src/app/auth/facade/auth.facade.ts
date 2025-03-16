@@ -15,8 +15,7 @@ export class AuthFacade implements IAuthFacade {
   ) {}
 
   login(username: string, password: string): void {
-    // Simulate an API call to get the token (replace with real API logic)
-    const token = 'your-jwt-token'; // Token received from your login API
+    const token = 'jwt-token';
 
     // Save the token
     this.tokenService.saveToken(token);

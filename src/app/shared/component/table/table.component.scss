@@ -1,0 +1,45 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.table-wrap {
+  height: calc(100vh - 20rem);
+  overflow-y: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed !important;
+
+  &-head {
+    position: sticky;
+    top: 0;
+    background: rgba($color-text, 0.25) !important;
+    z-index: 99;
+  }
+
+  &-row {
+    height: 3rem;
+    transition: background-color 0.3s ease;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($color-text, 0.1);
+    }
+  }
+  &-body-row {
+    &:hover {
+      background: rgba($color-primary, 0.075);
+      border-bottom: 1px solid rgba($color-primary, 0.8);
+    }
+  }
+
+  &-cell {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    vertical-align: middle;
+    word-wrap: break-word;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,74 @@
+<ng-container *ngIf="count">
+  <div class="pagination bg-white px-sm">
+    <div
+      class="d-flex gap-4 align-items-center justify-content-between page-count"
+    >
+      <div class="d-flex">{{ count }} total</div>
+    </div>
+    <div class="page-pager">
+      <ul *ngIf="pager.pages && pager.pages.length" class="pager">
+        <!-- First Page Button -->
+        <li
+          [ngClass]="{ disabled: pager.currentPage === 1 }"
+          class="page-item previous-item"
+        >
+          <a
+            (click)="pager.currentPage > 1 && setPage(1)"
+            class="page-link fs-xl"
+            >&laquo;</a
+          >
+        </li>
+
+        <!-- Previous Page Button -->
+        <li
+          [ngClass]="{ disabled: pager.currentPage === 1 }"
+          class="page-item previous-item"
+        >
+          <a
+            (click)="pager.currentPage > 1 && setPage(pager.currentPage - 1)"
+            class="page-link fs-default"
+            >&lt;</a
+          >
+        </li>
+
+        <!-- Page Numbers -->
+        <li
+          *ngFor="let page of pager.pages"
+          [ngClass]="{ active: pager.currentPage === page }"
+          class="page-item number-item"
+        >
+          <a (click)="setPage(page)" class="page-link">{{ page }}</a>
+        </li>
+
+        <!-- Next Page Button -->
+        <li
+          [ngClass]="{ disabled: pager.currentPage === pager.totalPages }"
+          class="page-item next-item"
+        >
+          <a
+            (click)="
+              pager.currentPage < pager.totalPages &&
+                setPage(pager.currentPage + 1)
+            "
+            class="page-link fs-default"
+            >&gt;</a
+          >
+        </li>
+
+        <!-- Last Page Button -->
+        <li
+          [ngClass]="{ disabled: pager.currentPage === pager.totalPages }"
+          class="page-item previous-item"
+        >
+          <a
+            (click)="
+              pager.currentPage < pager.totalPages && setPage(pager.totalPages)
+            "
+            class="page-link fs-xl"
+            >&raquo;</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>

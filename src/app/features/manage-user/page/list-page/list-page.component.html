@@ -1,1 +1,44 @@
-<p>list-page works!</p>
+<div class="d-flex flex-column gap-md p-xxl">
+  <section class="header-section">
+    <div class="d-flex justify-content-end align-items-center gap-3">
+      <app-button [config]="createBtnConfig" (onClick)="createNew()">
+      </app-button>
+    </div>
+    <div class="fs-xxl fw-extra-bold">Users List</div>
+  </section>
+  <section class="table-section">
+    <app-table [dataset]="dataset.content" (pageChange)="onPageChange($event)">
+      <ng-template tableColumn header="Name" let-item>
+        {{ item.name }}
+      </ng-template>
+
+      <ng-template tableColumn header="Address" let-item>
+        {{ item.address }}
+      </ng-template>
+      <ng-template tableColumn header="Username" let-item>
+        {{ item.username }}
+      </ng-template>
+      <ng-template tableColumn header="Status" let-item>
+        <app-status-badge [label]="item.status"></app-status-badge>
+      </ng-template>
+
+      <ng-template tableColumn header="User type" let-item>
+        <app-status-badge [label]="item.type"></app-status-badge>
+      </ng-template>
+
+      <ng-template tableColumn header="Action" let-item>
+        <div class="d-flex align-items-center gap-sm">
+          <app-button [config]="viewBtnConfig" (onClick)="viewDetails()">
+          </app-button>
+          <app-button [config]="updateBtnConfig" (onClick)="updateFields()">
+          </app-button>
+        </div>
+      </ng-template>
+    </app-table>
+    <app-pagination
+      [pageSize]="dataset.size"
+      [count]="dataset.totalCount"
+      (changePage)="onPageChange($event)"
+    ></app-pagination>
+  </section>
+</div>
