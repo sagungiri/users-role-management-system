@@ -32,11 +32,14 @@
   - manage user basic page setup
 
 - generic components added and updated their implementation
+
   - added generic table component
   - status badge component added
   - pagination component added
 
 ## Changed
+
+- readme file updated
 
 ## Fixed
 
