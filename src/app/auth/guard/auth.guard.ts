@@ -9,7 +9,7 @@ import { NavigationRoute } from '@shared/constant/navigation-route.const';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export const authGuard = (
+export const AuthGuard = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {

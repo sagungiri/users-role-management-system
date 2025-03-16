@@ -11,6 +11,8 @@ import { ButtonComponent } from '../../../shared/component/button/button.compone
 import { ErrorMessageComponent } from '../../../shared/component/error-message/error-message.component';
 import { ErrorMessageConst } from '@shared/constant/error-message.const';
 import { RegexConst } from '@shared/constant/regex.const';
+import { Router } from '@angular/router';
+import { NavigationRoute } from '@shared/constant/navigation-route.const';
 
 @Component({
   selector: 'app-login-template',
@@ -40,6 +42,8 @@ export class LoginTemplateComponent {
 
   errorMessageConst = ErrorMessageConst;
 
+  constructor(private router: Router) {}
+
   readonly loginForm = new FormGroup({
     username: new FormControl('', {
       validators: [
@@ -66,5 +70,12 @@ export class LoginTemplateComponent {
 
   getControl(controlName: string): FormControl {
     return this.loginForm.get(controlName) as FormControl;
+  }
+
+  navigate() {
+    this.router.navigate([
+      NavigationRoute.AUTH.BASE,
+      NavigationRoute.AUTH.USER_ACTIVATION
+    ]);
   }
 }

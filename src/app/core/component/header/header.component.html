@@ -1,0 +1,24 @@
+<div
+  class="header-section d-flex align-items-center justify-content-between p-md"
+>
+  <div class="d-flex align-items-center gap-md">
+    <div class="icon-container" (click)="handleSidebarToggle()">&#9776;</div>
+    <img src="assets/demo-icon.svg" class="header-logo" />
+  </div>
+
+  <div class="icon-container cursor-pointer" (click)="openModal()">
+    <img src="assets/down-arrow.svg" />
+  </div>
+</div>
+
+<!-- logout modal -->
+<div #logoutModal class="logout-modal-container" (click)="closeModal()">
+  <div class="modal-content">
+    <div
+      (click)="onLogout()"
+      class="modal-logout fs-default fw-bold cursor-pointer color-danger"
+    >
+      Log out
+    </div>
+  </div>
+</div>

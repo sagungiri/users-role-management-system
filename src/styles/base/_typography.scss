@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as *;
+
+.layout-container {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.outlet-content {
+  transition: 0.3s;
+  height: calc(100vh - 6rem);
+  width: 100%;
+  position: relative;
+  background-color: $color-main;
+  border-radius: 1.25rem 0 0 0;
+  overflow: hidden !important;
+}
+
+.icon-container {
+  padding: 0.25rem;
+  border: 1px solid rgba($color-text, 0.25);
+  border-radius: 0.5rem;
+  width: 2rem;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    box-shadow: rgba($color-text, 0.1) 0px 2px 8px 0px;
+  }
+}
+
+.logout-modal-container {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  padding-top: 3rem;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-text, 0.2);
+  .modal-content {
+    background-color: rgba($color-secondary, 0.1);
+    width: 15%;
+    float: right;
+    margin: 2.5rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    box-shadow: rgba($color-text, 0.2) 0px 2px 8px 0px;
+    border-radius: 0.25rem;
+  }
+}

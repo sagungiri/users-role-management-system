@@ -1,0 +1,15 @@
+<main class="layout-container">
+  <app-header
+    [isSidebarExpanded]="sidebarExpanded"
+    (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+  ></app-header>
+  <div class="d-flex">
+    <app-sidemenu [isExpanded]="sidebarExpanded"> </app-sidemenu>
+    <div
+      class="outlet-content p-md"
+      [ngClass]="{ sidebarExpanded: sidebarExpanded }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

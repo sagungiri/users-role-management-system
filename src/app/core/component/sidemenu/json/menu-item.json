@@ -1,0 +1,16 @@
+{
+  "menuItems": [
+    {
+      "name": "Dashboard",
+      "label": "Dashboard",
+      "routePath": "/dashboard",
+      "menuIcon": "assets/menu-icons/dashboard-icon.svg"
+    },
+    {
+      "name": "Manage User",
+      "label": "Manage User",
+      "routePath": "/manage-user",
+      "menuIcon": "assets/menu-icons/manage-user-icon.svg"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<div
+  [ngClass]="{ 'sidebar-container p-md': true, 'sidebar-expanded': isExpanded }"
+>
+  <ng-container *ngFor="let menuItem of menuItems">
+    <div
+      class="menu-items d-flex gap-xsm align-items-center cursor-pointer p-xsm"
+      [routerLink]="menuItem.routePath"
+      routerLinkActive="sidebar-menu-active bg-main"
+    >
+      <div>
+        <img [src]="menuItem.menuIcon" />
+      </div>
+      <div class="menu-item-label fs-md fw-bold" *ngIf="isExpanded">
+        {{ menuItem.label }}
+      </div>
+    </div>
+  </ng-container>
+</div>

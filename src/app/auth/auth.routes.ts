@@ -14,5 +14,10 @@ export const authRoutes: Routes = [
       import('@auth/page/activate/activate.component').then(
         c => c.ActivateComponent
       )
+  },
+  {
+    path: '',
+    redirectTo: NavigationRoute.AUTH.LOG_IN,
+    pathMatch: 'full'
   }
 ];

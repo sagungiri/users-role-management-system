@@ -6,10 +6,12 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ButtonComponent } from '@shared/component/button/button.component';
 import { ErrorMessageComponent } from '@shared/component/error-message/error-message.component';
 import { InputTextComponent } from '@shared/component/input-text/input-text.component';
 import { ErrorMessageConst } from '@shared/constant/error-message.const';
+import { NavigationRoute } from '@shared/constant/navigation-route.const';
 import { RegexConst } from '@shared/constant/regex.const';
 import { passwordsMatchValidator } from '@shared/validator/confirm-password.validator';
 
@@ -44,6 +46,8 @@ export class ActivateTemplateComponent {
   };
 
   errorMessageConst = ErrorMessageConst;
+
+  constructor(private router: Router) {}
 
   readonly signupForm = new FormGroup(
     {
@@ -81,5 +85,12 @@ export class ActivateTemplateComponent {
 
   getControl(controlName: string): FormControl {
     return this.signupForm.get(controlName) as FormControl;
+  }
+
+  navigate() {
+    this.router.navigate([
+      NavigationRoute.AUTH.BASE,
+      NavigationRoute.AUTH.LOG_IN
+    ]);
   }
 }

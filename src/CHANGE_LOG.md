@@ -25,6 +25,11 @@
 - Added account activate page
 - regex validation added in password with proper validation message
 
+- new implemented functionality
+  - forbidden page added
+  - basic dashboard layout with sidemenu and header added
+  - manage user basic page setup
+
 ## Changed
 
 ## Fixed

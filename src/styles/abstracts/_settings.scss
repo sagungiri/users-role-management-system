@@ -98,7 +98,8 @@ $flex-direction-values: (
 $flex-alignment-values: (
   start: flex-start,
   center: center,
-  end: flex-end
+  end: flex-end,
+  between: space-between
 );
 
 // Other Flexbox Utility Classes
