@@ -10,6 +10,7 @@ import { InputTextComponent } from '../../../shared/component/input-text/input-t
 import { ButtonComponent } from '../../../shared/component/button/button.component';
 import { ErrorMessageComponent } from '../../../shared/component/error-message/error-message.component';
 import { ErrorMessageConst } from '@shared/constant/error-message.const';
+import { RegexConst } from '@shared/constant/regex.const';
 
 @Component({
   selector: 'app-login-template',
@@ -34,7 +35,7 @@ export class LoginTemplateComponent {
   };
 
   signupBtnConfig = {
-    button: { type: 'Submit', cssClass: 'button-secondary', value: 'Sign up' }
+    button: { cssClass: 'button-secondary', value: 'Activate' }
   };
 
   errorMessageConst = ErrorMessageConst;
@@ -48,12 +49,14 @@ export class LoginTemplateComponent {
       ]
     }),
     password: new FormControl('', {
-      validators: [Validators.required]
+      validators: [
+        Validators.required,
+        Validators.pattern(RegexConst.PASSWORD_PATTERN)
+      ]
     })
   });
 
   submit(): void {
-    console.log('form', this.loginForm);
     if (this.loginForm.valid) {
       this.onSubmit.emit(
         this.loginForm.value as { username: string; password: string }

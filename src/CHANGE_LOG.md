@@ -19,6 +19,12 @@
 - Implemented Auth facade, added auth guard, interceptor
 - Added dynamic shared component for button, input text, and error message handler
 
+### march 16, 2025
+
+- Made validation error handler more generic
+- Added account activate page
+- regex validation added in password with proper validation message
+
 ## Changed
 
 ## Fixed

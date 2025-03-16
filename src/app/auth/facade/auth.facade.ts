@@ -27,4 +27,6 @@ export class AuthFacade implements IAuthFacade {
     this.storageService.clear();
     console.log('User logged out');
   }
+
+  signup(username: string, password: string, confirmPassword: string): void {}
 }

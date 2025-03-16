@@ -21,7 +21,7 @@ export const authGuard = (
   return of(!!token).pipe(
     map(isAuthenticated =>
       isAuthenticated
-        ? true /
+        ? true
         : createUrlTreeFromSnapshot(route, [NavigationRoute.AUTH.LOG_IN], {
             returnUrl: state.url // Redirect to login with returnUrl
           })

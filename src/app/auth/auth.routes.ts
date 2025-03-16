@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './page/login/login.component';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
-import { SignupComponent } from './page/signup/signup.component';
 
 export const authRoutes: Routes = [
   {
@@ -12,6 +11,8 @@ export const authRoutes: Routes = [
   {
     path: NavigationRoute.AUTH.USER_ACTIVATION,
     loadComponent: () =>
-      import('@auth/page/signup/signup.component').then(c => c.SignupComponent)
+      import('@auth/page/activate/activate.component').then(
+        c => c.ActivateComponent
+      )
   }
 ];

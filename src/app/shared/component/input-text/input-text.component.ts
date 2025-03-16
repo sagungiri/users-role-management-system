@@ -12,6 +12,5 @@ export class InputTextComponent {
   @Input() control!: FormControl;
   @Input() label: string = '';
   @Input() placeholder: string = '';
-  @Input() isDisabled: boolean = false;
   @Input() inputType = 'text';
 }

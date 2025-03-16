@@ -23,26 +23,22 @@ export class ErrorMessageComponent {
       .filter(errorDef => formControl.hasError(errorDef.type))
       .map(errorDef => {
         const errorData = formControl.getError(errorDef.type);
-
-        if (errorDef.message.includes('{0}') && errorData) {
-          // Handle different validation types dynamically
-          switch (errorDef.type) {
-            case 'minlength':
-            case 'maxlength':
-              return errorDef.message.replace(
-                /\{0\}/g,
-                errorData?.['requiredLength'].toString()
-              );
-            case 'pattern':
-              return errorDef.message.replace(
-                /\{0\}/g,
-                errorData?.['requiredPattern'] ?? ''
-              );
-            default:
-              return errorDef.message;
-          }
+        // Handle different validation types dynamically
+        switch (errorDef.type) {
+          case 'minlength':
+          case 'maxlength':
+            return errorDef.message.replace(
+              /\{0\}/g,
+              errorData?.['requiredLength'].toString()
+            );
+          case 'pattern':
+            return errorDef.message.replace(
+              /\{0\}/g,
+              errorData?.['requiredPattern'] ?? ''
+            );
+          default:
+            return errorDef.message;
         }
-        return errorDef.message;
       });
   }
 }

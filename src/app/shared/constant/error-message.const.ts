@@ -17,6 +17,18 @@ export const ErrorMessageConst = {
     {
       type: 'required',
       message: 'Please enter password'
+    },
+    {
+      type: 'pattern',
+      message:
+        'Password must be atleast eight character with uppercase, lowercase, number & special character'
     }
+  ],
+  CONFIRM_PASSWORD: [
+    {
+      type: 'required',
+      message: 'Please enter password'
+    },
+    { type: 'mismatch', message: 'Passwords do not match' }
   ]
 };
