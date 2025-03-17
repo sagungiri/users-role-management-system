@@ -7,33 +7,35 @@
     <div class="fs-xxl fw-extra-bold">User Roles List</div>
   </section>
   <section class="table-section">
-    <app-table [dataset]="dataset.content">
-      <ng-template tableColumn header="Name" let-item>
-        {{ item.name }}
-      </ng-template>
+    <ng-container *ngIf="dataset$ | async as dataset">
+      <app-table [dataset]="dataset">
+        <ng-template tableColumn header="Name" let-item>
+          {{ item.name }}
+        </ng-template>
 
-      <ng-template tableColumn header="Label" let-item>
-        {{ item.label }}
-      </ng-template>
-      <ng-template tableColumn header="Action" let-item>
-        <div class="d-flex align-items-center gap-sm">
-          <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails(item.id)">
+        <ng-template tableColumn header="Label" let-item>
+          {{ item.label }}
+        </ng-template>
+        <ng-template tableColumn header="Action" let-item>
+          <div class="d-flex align-items-center gap-sm">
+            <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails(item.id)">
           </app-button> -->
-          <app-button
-            [config]="updateBtnConfig"
-            (onClick)="updateFields(item.id)"
-          >
-          </app-button>
+            <app-button
+              [config]="updateBtnConfig"
+              (onClick)="updateFields(item.id)"
+            >
+            </app-button>
 
-          <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
-          </app-button>
-        </div>
-      </ng-template>
-    </app-table>
-    <app-pagination
-      [pageSize]="dataset.size"
-      [count]="dataset.totalCount"
-      (changePage)="onPageChange($event)"
-    ></app-pagination>
+            <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
+            </app-button>
+          </div>
+        </ng-template>
+      </app-table>
+      <app-pagination
+        [pageSize]="pageSize"
+        [count]="dataset.length"
+        (changePage)="onPageChange($event)"
+      ></app-pagination>
+    </ng-container>
   </section>
 </div>

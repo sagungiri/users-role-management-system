@@ -6,6 +6,8 @@ import { TableComponent, TableColumnDirective } from '@shared/component/table';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '@shared/component/pagination/pagination.component';
 import { ActionUtils } from '@shared/utils/action-utils';
+import { BehaviorSubject, switchMap, tap } from 'rxjs';
+import { ApiService } from '@features/user-roles/service/api.service';
 
 @Component({
   selector: 'app-list-page',
@@ -28,25 +30,18 @@ export class ListPageComponent {
   viewBtnConfig = ActionUtils.viewBtnConfig;
   updateBtnConfig = ActionUtils.updateBtnConfig;
   deleteBtnConfig = ActionUtils.deleteBtnConfig;
+  private pageSubject = new BehaviorSubject<number>(1);
+  pageSize = 5;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private apiService: ApiService
+  ) {}
 
-  dataset = {
-    totalCount: 50,
-    size: 10,
-    content: [
-      {
-        id: 1,
-        name: 'Adminstrator',
-        label: 'Admin'
-      },
-      {
-        id: 2,
-        name: 'Content Creator',
-        label: 'Content Creator'
-      }
-    ]
-  };
+  dataset$ = this.pageSubject.pipe(
+    switchMap(page => this.apiService.getAll()),
+    tap(data => {})
+  );
 
   createNew() {
     this.router.navigate([this.navigationRoute.FEATURE.USER_ROLE.CREATE]);

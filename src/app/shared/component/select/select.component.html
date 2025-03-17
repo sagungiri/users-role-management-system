@@ -1,0 +1,12 @@
+<mat-select
+  [formControl]="control"
+  [placeholder]="placeholder"
+  [disableOptionCentering]="true"
+  [ngClass]="{
+    'invalid-select': control.invalid && (control.dirty || control.touched)
+  }"
+>
+  <mat-option *ngFor="let option of options" [value]="option.value">
+    {{ option.label }}
+  </mat-option>
+</mat-select>

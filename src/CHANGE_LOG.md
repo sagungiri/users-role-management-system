@@ -39,6 +39,8 @@
 
 - Roles UI added, generic checkbox formcontrol added, added roles in menu
 
+- input type select generic component added, api integration for roles list
+
 ## Changed
 
 - readme file updated

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '@core/interface/api-response';
 import { ApiPathConfig } from '@core/config/api-path.config';
@@ -40,5 +40,47 @@ export class ApiConfigService {
       reqParams || {},
       options
     );
+  }
+
+  get<T, R>(
+    path: string,
+    reqParams?: T,
+    headers?: { [x: string]: string }
+  ): Observable<R> {
+    let options: {
+      headers?: HttpHeaders;
+      params?: HttpParams;
+    } = {};
+
+    if (headers) {
+      options.headers = new HttpHeaders(headers);
+    }
+
+    if (reqParams) {
+      let params = new HttpParams();
+      Object.entries(reqParams).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
+          params = params.set(key, String(value));
+        }
+      });
+      options.params = params;
+    }
+    return this.httpClient.get<R>(ApiPathConfig.generateApiPath(path), options);
+  }
+
+  put<T, R>(
+    path: string,
+    reqParams: T,
+    headers?: { [x: string]: string }
+  ): Observable<ApiResponse<R>> {
+    let options = {};
+    if (headers) {
+      const httpHeaders = new HttpHeaders({
+        ...headers
+      });
+      options = { headers: httpHeaders };
+    }
+
+    return this.httpClient.put<ApiResponse<R>>(path, reqParams, options);
   }
 }

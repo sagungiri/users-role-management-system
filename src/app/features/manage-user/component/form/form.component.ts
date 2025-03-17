@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 import { ButtonComponent } from '@shared/component/button/button.component';
 import { ErrorMessageComponent } from '@shared/component/error-message/error-message.component';
 import { InputTextComponent } from '@shared/component/input-text/input-text.component';
+import { SelectComponent } from '@shared/component/select/select.component';
 import { ErrorMessageConst } from '@shared/constant/error-message.const';
-import { CheckboxGroupComponent } from '@shared/component/checkbox-group/checkbox-group.component';
+import { RegexConst } from '@shared/constant/regex.const';
 
 @Component({
   selector: 'app-form',
@@ -21,7 +22,7 @@ import { CheckboxGroupComponent } from '@shared/component/checkbox-group/checkbo
     InputTextComponent,
     ButtonComponent,
     ErrorMessageComponent,
-    CheckboxGroupComponent
+    SelectComponent
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
@@ -40,6 +41,12 @@ export class FormComponent {
   };
   errorMessageConst = ErrorMessageConst;
 
+  roles = [
+    { label: 'Admin', value: 'admin' },
+    { label: 'User', value: 'user' },
+    { label: 'Manager', value: 'manager' }
+  ];
+
   constructor(private router: Router) {}
 
   readonly rolesForm = new FormGroup({
@@ -50,14 +57,33 @@ export class FormComponent {
         Validators.maxLength(15)
       ]
     }),
-    label: new FormControl('', {
+    username: new FormControl('', {
       validators: [
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(15)
       ]
     }),
-    permissions: new FormControl(['View'], {
+    password: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.pattern(RegexConst.PASSWORD_PATTERN)
+      ]
+    }),
+    email: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.pattern(RegexConst.EMAIL_PATTERN)
+      ]
+    }),
+    phonenumber: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)
+      ]
+    }),
+    role: new FormControl('', {
       validators: [Validators.required]
     })
   });

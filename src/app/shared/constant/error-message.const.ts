@@ -58,5 +58,41 @@ export const ErrorMessageConst = {
       type: 'maxlength',
       message: 'Maximum {0} characters allowed'
     }
+  ],
+  EMAIL: [
+    {
+      type: 'required',
+      message: 'Please enter email'
+    },
+    {
+      type: 'pattern',
+      message: 'Invalid email address'
+    }
+  ],
+  PHONENUMBER: [
+    {
+      type: 'required',
+      message: 'Please enter phone number'
+    },
+    {
+      type: 'minlength',
+      message: 'Invalid phone number'
+    },
+    {
+      type: 'maxlength',
+      message: 'Invalid phone number'
+    }
+  ],
+  ROLE: [
+    {
+      type: 'required',
+      message: 'Please select role'
+    }
+  ],
+  PERMISSION: [
+    {
+      type: 'required',
+      message: 'Please select atleast one permission'
+    }
   ]
 };
