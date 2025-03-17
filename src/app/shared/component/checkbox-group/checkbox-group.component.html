@@ -1,0 +1,12 @@
+<div class="checkbox-group">
+  <label class="form-label fw-bold fs-md color-text">{{ label }}</label>
+
+  <div *ngFor="let option of options" class="checkbox-item">
+    <mat-checkbox
+      [checked]="isSelected(option)"
+      (change)="selectionChange(option)"
+    >
+      {{ option }}
+    </mat-checkbox>
+  </div>
+</div>

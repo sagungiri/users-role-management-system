@@ -11,6 +11,12 @@
       "label": "Manage User",
       "routePath": "/manage-user",
       "menuIcon": "assets/menu-icons/manage-user-icon.svg"
+    },
+    {
+      "name": "User Roles",
+      "label": "User Roles",
+      "routePath": "/user-roles",
+      "menuIcon": "assets/menu-icons/user-roles-icon.svg"
     }
   ]
 }

@@ -20,5 +20,12 @@ export const featuresRoutes: Routes = [
       import('@features/manage-user/manage-user.routes').then(
         c => c.manageUserRoutes
       )
+  },
+  {
+    path: NavigationRoute.FEATURE.USER_ROLE.BASE,
+    loadChildren: () =>
+      import('@features/user-roles/user-role.routes').then(
+        c => c.userRolesRoutes
+      )
   }
 ];

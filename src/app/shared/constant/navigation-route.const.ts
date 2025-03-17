@@ -12,7 +12,8 @@ export const NavigationRoute = {
   },
   FEATURE: {
     DASHBOARD: 'dashboard',
-    MANAGE_USER: generateRoutes('manage-user')
+    MANAGE_USER: generateRoutes('manage-user'),
+    USER_ROLE: generateRoutes('user-roles')
   },
   FORBIDDEN: 'forbidden'
 };

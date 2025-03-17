@@ -5,7 +5,6 @@ import { ButtonComponent } from '@shared/component/button/button.component';
 import { TableComponent, TableColumnDirective } from '@shared/component/table';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '@shared/component/pagination/pagination.component';
-import { StatusBadgeComponent } from '@shared/component/status-badge/status-badge.component';
 import { ActionUtils } from '@shared/utils/action-utils';
 
 @Component({
@@ -15,8 +14,7 @@ import { ActionUtils } from '@shared/utils/action-utils';
     ButtonComponent,
     TableComponent,
     TableColumnDirective,
-    PaginationComponent,
-    StatusBadgeComponent
+    PaginationComponent
   ],
   templateUrl: './list-page.component.html',
   styleUrl: './list-page.component.scss'
@@ -25,7 +23,7 @@ export class ListPageComponent {
   navigationRoute = NavigationRoute;
 
   createBtnConfig = {
-    button: { cssClass: 'button-primary', value: 'Add User' }
+    button: { cssClass: 'button-primary', value: 'Add Roles' }
   };
   viewBtnConfig = ActionUtils.viewBtnConfig;
   updateBtnConfig = ActionUtils.updateBtnConfig;
@@ -39,39 +37,28 @@ export class ListPageComponent {
     content: [
       {
         id: 1,
-        name: 'Alice',
-        address: 25,
-        username: 'Alice12',
-        status: 'Active',
-        type: 'Primary'
+        name: 'Adminstrator',
+        label: 'Admin'
       },
       {
         id: 2,
-        name: 'Bob',
-        username: 'Bob',
-        status: 'Active',
-        type: 'Primary'
-      },
-      {
-        id: 3,
-        name: 'Charlie',
-        username: 'Charlie',
-        status: 'Inactive',
-        type: 'Secondary'
+        name: 'Content Creator',
+        label: 'Content Creator'
       }
     ]
   };
 
   createNew() {
-    this.router.navigate([this.navigationRoute.FEATURE.MANAGE_USER.CREATE]);
+    this.router.navigate([this.navigationRoute.FEATURE.USER_ROLE.CREATE]);
   }
 
   onPageChange(event: any) {}
 
-  viewDetails() {}
+  viewDetails(id: number) {}
 
   updateFields(id: number) {
-    this.router.navigate([this.navigationRoute.FEATURE.MANAGE_USER.BASE, id]);
+    this.router.navigate([this.navigationRoute.FEATURE.USER_ROLE.BASE, id]);
   }
+
   delete(id: number) {}
 }

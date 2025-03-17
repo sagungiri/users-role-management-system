@@ -37,6 +37,8 @@
   - status badge component added
   - pagination component added
 
+- Roles UI added, generic checkbox formcontrol added, added roles in menu
+
 ## Changed
 
 - readme file updated

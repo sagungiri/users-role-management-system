@@ -4,7 +4,7 @@
       <app-button [config]="createBtnConfig" (onClick)="createNew()">
       </app-button>
     </div>
-    <div class="fs-xxl fw-extra-bold">Users List</div>
+    <div class="fs-xxl fw-extra-bold">User Roles List</div>
   </section>
   <section class="table-section">
     <app-table [dataset]="dataset.content">
@@ -12,29 +12,19 @@
         {{ item.name }}
       </ng-template>
 
-      <ng-template tableColumn header="Address" let-item>
-        {{ item.address }}
+      <ng-template tableColumn header="Label" let-item>
+        {{ item.label }}
       </ng-template>
-      <ng-template tableColumn header="Username" let-item>
-        {{ item.username }}
-      </ng-template>
-      <ng-template tableColumn header="Status" let-item>
-        <app-status-badge [label]="item.status"></app-status-badge>
-      </ng-template>
-
-      <ng-template tableColumn header="User type" let-item>
-        <app-status-badge [label]="item.type"></app-status-badge>
-      </ng-template>
-
       <ng-template tableColumn header="Action" let-item>
         <div class="d-flex align-items-center gap-sm">
-          <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails()">
+          <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails(item.id)">
           </app-button> -->
           <app-button
             [config]="updateBtnConfig"
             (onClick)="updateFields(item.id)"
           >
           </app-button>
+
           <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
           </app-button>
         </div>
