@@ -3,6 +3,6 @@
     <div class="fs-xxl fw-extra-bold">Create New User Role</div>
   </section>
   <section class="form-section">
-    <app-form (onSubmit)="submit()"></app-form>
+    <app-form (onSubmit)="submit($event)" (onCancel)="onCancel()"></app-form>
   </section>
 </div>

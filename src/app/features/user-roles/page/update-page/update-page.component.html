@@ -3,6 +3,10 @@
     <div class="fs-xxl fw-extra-bold">Update User Role</div>
   </section>
   <section class="form-section">
-    <app-form (onSubmit)="submit()"></app-form>
+    <app-form
+      (onSubmit)="submit($event)"
+      (onCancel)="onCancel()"
+      [formData]="detailData$ | async"
+    ></app-form>
   </section>
 </div>

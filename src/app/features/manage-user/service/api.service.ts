@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  basePath = 'role';
+  basePath = 'user';
   constructor(private apiConfigService: ApiConfigService) {}
 
   getAll() {

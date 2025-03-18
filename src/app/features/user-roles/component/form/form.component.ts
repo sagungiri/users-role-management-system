@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -26,8 +32,10 @@ import { CheckboxGroupComponent } from '@shared/component/checkbox-group/checkbo
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export class FormComponent {
+export class FormComponent implements OnChanges {
+  @Input() formData: any;
   @Output() onSubmit = new EventEmitter<any>();
+  @Output() onCancel = new EventEmitter<boolean>();
 
   permissionsOptions = ['View', 'Create', 'Update', 'Delete'];
 
@@ -62,11 +70,15 @@ export class FormComponent {
     })
   });
 
+  ngOnChanges() {
+    if (this.formData) {
+      this.rolesForm.patchValue(this.formData); // Update form when data changes
+    }
+  }
+
   submit(): void {
     if (this.rolesForm.valid) {
-      //   this.onSubmit.emit(
-      //     this.rolesForm.value as { username: string; password: string }
-      //   );
+      this.onSubmit.emit(this.rolesForm.value);
     }
   }
 
@@ -74,5 +86,7 @@ export class FormComponent {
     return this.rolesForm.get(controlName) as FormControl;
   }
 
-  cancel() {}
+  cancel() {
+    this.onCancel.next(true);
+  }
 }

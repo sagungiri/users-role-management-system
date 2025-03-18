@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -27,8 +33,11 @@ import { RegexConst } from '@shared/constant/regex.const';
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export class FormComponent {
+export class FormComponent implements OnChanges {
+  @Input() formData: any;
+  @Input() roles: any;
   @Output() onSubmit = new EventEmitter<any>();
+  @Output() onCancel = new EventEmitter<boolean>();
 
   permissionsOptions = ['View', 'Create', 'Update', 'Delete'];
 
@@ -41,15 +50,9 @@ export class FormComponent {
   };
   errorMessageConst = ErrorMessageConst;
 
-  roles = [
-    { label: 'Admin', value: 'admin' },
-    { label: 'User', value: 'user' },
-    { label: 'Manager', value: 'manager' }
-  ];
-
   constructor(private router: Router) {}
 
-  readonly rolesForm = new FormGroup({
+  readonly userForm = new FormGroup({
     name: new FormControl('', {
       validators: [
         Validators.required,
@@ -71,10 +74,7 @@ export class FormComponent {
       ]
     }),
     email: new FormControl('', {
-      validators: [
-        Validators.required,
-        Validators.pattern(RegexConst.EMAIL_PATTERN)
-      ]
+      validators: [Validators.required]
     }),
     phonenumber: new FormControl('', {
       validators: [
@@ -88,17 +88,23 @@ export class FormComponent {
     })
   });
 
+  ngOnChanges() {
+    if (this.formData) {
+      this.userForm.patchValue(this.formData);
+    }
+  }
+
   submit(): void {
-    if (this.rolesForm.valid) {
-      //   this.onSubmit.emit(
-      //     this.rolesForm.value as { username: string; password: string }
-      //   );
+    if (this.userForm.valid) {
+      this.onSubmit.next(this.userForm.value);
     }
   }
 
   getControl(controlName: string): FormControl {
-    return this.rolesForm.get(controlName) as FormControl;
+    return this.userForm.get(controlName) as FormControl;
   }
 
-  cancel() {}
+  cancel() {
+    this.onCancel.next(true);
+  }
 }

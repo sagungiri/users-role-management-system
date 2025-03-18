@@ -31,7 +31,7 @@ export class ListPageComponent {
   updateBtnConfig = ActionUtils.updateBtnConfig;
   deleteBtnConfig = ActionUtils.deleteBtnConfig;
   private pageSubject = new BehaviorSubject<number>(1);
-  pageSize = 5;
+  pageSize = 10;
 
   constructor(
     private router: Router,

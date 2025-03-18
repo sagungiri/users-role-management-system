@@ -3,6 +3,9 @@
     <div class="fs-xxl fw-extra-bold">Create New User</div>
   </section>
   <section class="form-section">
-    <app-form (onSubmit)="submit()"></app-form>
+    <app-form
+      (onSubmit)="submit($event)"
+      [roles]="rolesData$ | async"
+    ></app-form>
   </section>
 </div>

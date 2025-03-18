@@ -7,43 +7,48 @@
     <div class="fs-xxl fw-extra-bold">Users List</div>
   </section>
   <section class="table-section">
-    <app-table [dataset]="dataset.content">
-      <ng-template tableColumn header="Name" let-item>
-        {{ item.name }}
-      </ng-template>
+    <ng-container *ngIf="dataset$ | async as dataset">
+      <app-table [dataset]="dataset">
+        <ng-template tableColumn header="Name" let-item>
+          {{ item.name }}
+        </ng-template>
 
-      <ng-template tableColumn header="Address" let-item>
-        {{ item.address }}
-      </ng-template>
-      <ng-template tableColumn header="Username" let-item>
-        {{ item.username }}
-      </ng-template>
-      <ng-template tableColumn header="Status" let-item>
-        <app-status-badge [label]="item.status"></app-status-badge>
-      </ng-template>
+        <ng-template tableColumn header="Email" let-item>
+          {{ item.email }}
+        </ng-template>
+        <ng-template tableColumn header="Username" let-item>
+          {{ item.username }}
+        </ng-template>
+        <ng-template tableColumn header="Role" let-item>
+          {{ item.role }}
+        </ng-template>
+        <ng-template tableColumn header="Status" let-item>
+          <app-status-badge [label]="item.status"></app-status-badge>
+        </ng-template>
 
-      <ng-template tableColumn header="User type" let-item>
-        <app-status-badge [label]="item.type"></app-status-badge>
-      </ng-template>
+        <ng-template tableColumn header="User type" let-item>
+          <app-status-badge [label]="item.userType"></app-status-badge>
+        </ng-template>
 
-      <ng-template tableColumn header="Action" let-item>
-        <div class="d-flex align-items-center gap-sm">
-          <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails()">
+        <ng-template tableColumn header="Action" let-item>
+          <div class="d-flex align-items-center gap-sm">
+            <!-- <app-button [config]="viewBtnConfig" (onClick)="viewDetails()">
           </app-button> -->
-          <app-button
-            [config]="updateBtnConfig"
-            (onClick)="updateFields(item.id)"
-          >
-          </app-button>
-          <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
-          </app-button>
-        </div>
-      </ng-template>
-    </app-table>
-    <app-pagination
-      [pageSize]="dataset.size"
-      [count]="dataset.totalCount"
-      (changePage)="onPageChange($event)"
-    ></app-pagination>
+            <app-button
+              [config]="updateBtnConfig"
+              (onClick)="updateFields(item.id)"
+            >
+            </app-button>
+            <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
+            </app-button>
+          </div>
+        </ng-template>
+      </app-table>
+      <app-pagination
+        [pageSize]="pageSize"
+        [count]="dataset.length"
+        (changePage)="onPageChange($event)"
+      ></app-pagination>
+    </ng-container>
   </section>
 </div>
