@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '@shared/component/pagination/pagination.component';
 import { ActionUtils } from '@shared/utils/action-utils';
 import { BehaviorSubject, switchMap, tap } from 'rxjs';
-import { ApiService } from '@features/user-roles/service/api.service';
+import { UserRolesApiService } from '@features/services/user-roles-api.service';
 
 @Component({
   selector: 'app-list-page',
@@ -35,7 +35,7 @@ export class ListPageComponent {
 
   constructor(
     private router: Router,
-    private apiService: ApiService
+    private apiService: UserRolesApiService
   ) {}
 
   dataset$ = this.pageSubject.pipe(

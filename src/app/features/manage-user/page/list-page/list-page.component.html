@@ -19,9 +19,6 @@
         <ng-template tableColumn header="Username" let-item>
           {{ item.username }}
         </ng-template>
-        <ng-template tableColumn header="Role" let-item>
-          {{ item.role }}
-        </ng-template>
         <ng-template tableColumn header="Status" let-item>
           <app-status-badge [label]="item.status"></app-status-badge>
         </ng-template>

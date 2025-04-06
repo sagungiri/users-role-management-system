@@ -34,7 +34,7 @@ export class AuthFacade implements IAuthFacade {
 
   logout(): void {
     this.storageService.clear();
-    this.router.navigate([this.navigationRoute.AUTH.LOG_IN]);
+    this.router.navigate([this.navigationRoute.AUTH.BASE]);
     console.log('User logged out');
   }
 

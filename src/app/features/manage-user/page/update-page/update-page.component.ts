@@ -2,10 +2,10 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormComponent } from '@features/manage-user/component/form/form.component';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
-import { ApiService as RoleApiService } from '@features/user-roles/service/api.service';
+import { UserRolesApiService as RoleApiService } from '@features/services/user-roles-api.service';
 
 import { map, Observable, switchMap, tap } from 'rxjs';
-import { ApiService } from '@features/manage-user/service/api.service';
+import { ManageUserApiService } from '@features/services/manage-user-api.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,13 +17,10 @@ import { CommonModule } from '@angular/common';
 export class UpdatePageComponent {
   navigationRoute = NavigationRoute;
   id: string = '';
-  roleApiService = inject(RoleApiService);
+  private roleApiService = inject(RoleApiService);
   private route = inject(ActivatedRoute);
-
-  constructor(
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  private apiService = inject(ManageUserApiService);
+  private router = inject(Router);
 
   rolesData$ = this.roleApiService.getAll().pipe(
     map((data: any) =>

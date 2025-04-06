@@ -41,6 +41,11 @@
 
 - input type select generic component added, api integration for roles list
 
+### april 6, 2025
+
+- services moved from component to open service folder
+- auth guard implemented
+
 ## Changed
 
 - readme file updated

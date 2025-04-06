@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormComponent } from '@features/user-roles/component/form/form.component';
-import { ApiService } from '@features/user-roles/service/api.service';
+import { UserRolesApiService } from '@features/services/user-roles-api.service';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
 import { Observable } from 'rxjs/internal/Observable';
 import { switchMap, tap } from 'rxjs/operators';
@@ -18,7 +18,7 @@ export class UpdatePageComponent {
   private route = inject(ActivatedRoute);
   id: string = '';
   constructor(
-    private apiService: ApiService,
+    private apiService: UserRolesApiService,
     private router: Router
   ) {}
 

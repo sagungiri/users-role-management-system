@@ -8,7 +8,7 @@ import { PaginationComponent } from '@shared/component/pagination/pagination.com
 import { StatusBadgeComponent } from '@shared/component/status-badge/status-badge.component';
 import { ActionUtils } from '@shared/utils/action-utils';
 import { BehaviorSubject, switchMap, tap } from 'rxjs';
-import { ApiService } from '@features/manage-user/service/api.service';
+import { ManageUserApiService } from '@features/services/manage-user-api.service';
 
 @Component({
   selector: 'app-list-page',
@@ -37,7 +37,7 @@ export class ListPageComponent {
 
   constructor(
     private router: Router,
-    private apiService: ApiService
+    private apiService: ManageUserApiService
   ) {}
 
   dataset$ = this.pageSubject.pipe(

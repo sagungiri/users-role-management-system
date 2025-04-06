@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormComponent } from '@features/user-roles/component/form/form.component';
-import { ApiService } from '@features/user-roles/service/api.service';
+import { UserRolesApiService } from '@features/services/user-roles-api.service';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
 
 @Component({
@@ -14,7 +14,7 @@ export class CreatePageComponent {
   navigationRoute = NavigationRoute;
 
   constructor(
-    private apiService: ApiService,
+    private apiService: UserRolesApiService,
     private router: Router
   ) {}
 

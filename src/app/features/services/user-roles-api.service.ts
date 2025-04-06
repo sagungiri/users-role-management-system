@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class UserRolesApiService {
   basePath = 'role';
   constructor(private apiConfigService: ApiConfigService) {}
 

@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormComponent } from '@features/manage-user/component/form/form.component';
-import { ApiService } from '@features/manage-user/service/api.service';
-import { ApiService as RoleApiService } from '@features/user-roles/service/api.service';
+import { ManageUserApiService } from '@features/services/manage-user-api.service';
+import { UserRolesApiService as RoleApiService } from '@features/services/user-roles-api.service';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
-import { catchError, map, tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-create-page',
@@ -16,11 +16,8 @@ import { catchError, map, tap } from 'rxjs';
 export class CreatePageComponent {
   navigationRoute = NavigationRoute;
   roleApiService = inject(RoleApiService);
-
-  constructor(
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  apiService = inject(ManageUserApiService);
+  router = inject(Router);
 
   rolesData$ = this.roleApiService.getAll().pipe(
     map((data: any) =>
