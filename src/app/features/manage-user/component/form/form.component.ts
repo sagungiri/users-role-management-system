@@ -91,6 +91,9 @@ export class FormComponent implements OnChanges {
   ngOnChanges() {
     if (this.formData) {
       this.userForm.patchValue(this.formData);
+      if (this.formData.userType === 'Primary') {
+        this.userForm.disable();
+      }
     }
   }
 

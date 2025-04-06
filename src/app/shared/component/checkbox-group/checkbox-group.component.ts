@@ -13,6 +13,7 @@ export class CheckboxGroupComponent {
   @Input() options: string[] = [];
   @Input() control!: FormControl;
   @Input() label: string = '';
+  @Input() isDisabled: boolean = false;
 
   selectionChange(option: string) {
     const currentValue = this.control.value || [];

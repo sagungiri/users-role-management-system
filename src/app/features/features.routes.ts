@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from '@auth/guard/auth.guard';
+import { PermissionGuard } from '@core/guard/permission.guard';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
 
 export const featuresRoutes: Routes = [
@@ -20,13 +20,15 @@ export const featuresRoutes: Routes = [
     loadChildren: () =>
       import('@features/manage-user/manage-user.routes').then(
         c => c.manageUserRoutes
-      )
+      ),
+    canActivate: [PermissionGuard]
   },
   {
     path: NavigationRoute.FEATURE.USER_ROLE.BASE,
     loadChildren: () =>
       import('@features/user-roles/user-role.routes').then(
         c => c.userRolesRoutes
-      )
+      ),
+    canActivate: [PermissionGuard]
   }
 ];

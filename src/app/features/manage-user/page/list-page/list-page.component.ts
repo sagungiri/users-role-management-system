@@ -9,6 +9,7 @@ import { StatusBadgeComponent } from '@shared/component/status-badge/status-badg
 import { ActionUtils } from '@shared/utils/action-utils';
 import { BehaviorSubject, switchMap, tap } from 'rxjs';
 import { ManageUserApiService } from '@features/services/manage-user-api.service';
+import { ButtonPermissionDirective } from '@core/directives/button-permission.directive';
 
 @Component({
   selector: 'app-list-page',
@@ -18,7 +19,8 @@ import { ManageUserApiService } from '@features/services/manage-user-api.service
     TableComponent,
     TableColumnDirective,
     PaginationComponent,
-    StatusBadgeComponent
+    StatusBadgeComponent,
+    ButtonPermissionDirective
   ],
   templateUrl: './list-page.component.html',
   styleUrl: './list-page.component.scss'

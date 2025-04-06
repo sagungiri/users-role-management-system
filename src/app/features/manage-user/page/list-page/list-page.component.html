@@ -1,6 +1,9 @@
 <div class="d-flex flex-column gap-md p-xxl">
   <section class="header-section">
-    <div class="d-flex justify-content-end align-items-center">
+    <div
+      class="d-flex justify-content-end align-items-center"
+      *buttonPermission="'Create'"
+    >
       <app-button [config]="createBtnConfig" (onClick)="createNew()">
       </app-button>
     </div>
@@ -34,9 +37,14 @@
             <app-button
               [config]="updateBtnConfig"
               (onClick)="updateFields(item.id)"
+              *buttonPermission="'Update'"
             >
             </app-button>
-            <app-button [config]="deleteBtnConfig" (onClick)="delete(item.id)">
+            <app-button
+              [config]="deleteBtnConfig"
+              (onClick)="delete(item.id)"
+              *buttonPermission="'Delete'"
+            >
             </app-button>
           </div>
         </ng-template>

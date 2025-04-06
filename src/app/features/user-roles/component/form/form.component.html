@@ -38,6 +38,7 @@
         [options]="permissionsOptions"
         [control]="getControl('permissions')"
         label="Permissions"
+        [isDisabled]="isDisabled"
       ></app-checkbox-group>
       <app-error-message
         [control]="getControl('permissions')"

@@ -47,6 +47,7 @@ export class FormComponent implements OnChanges {
     button: { cssClass: 'button-secondary', value: 'Cancel' }
   };
   errorMessageConst = ErrorMessageConst;
+  isDisabled = false;
 
   constructor(private router: Router) {}
 
@@ -72,7 +73,11 @@ export class FormComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.formData) {
-      this.rolesForm.patchValue(this.formData); // Update form when data changes
+      this.rolesForm.patchValue(this.formData);
+      if (this.formData.default) {
+        this.rolesForm.disable();
+        this.isDisabled = true;
+      }
     }
   }
 

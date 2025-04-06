@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from '@auth/guard/auth.guard';
+import { AuthGuard } from '@core/guard/auth.guard';
 import { featuresRoutes } from '@features/features.routes';
 import { NavigationRoute } from '@shared/constant/navigation-route.const';
 

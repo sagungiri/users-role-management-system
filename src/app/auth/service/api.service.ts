@@ -6,7 +6,8 @@ import { ApiConfigService } from '@core/service/api-config.service';
   providedIn: 'root'
 })
 export class ApiService {
-  basePath = 'user';
+  readonly basePath = 'user';
+  readonly rolePath = 'role';
   constructor(private apiConfigService: ApiConfigService) {}
 
   getUser(username: string, password: string) {
@@ -14,6 +15,14 @@ export class ApiService {
 
     return this.apiConfigService.get<any, any[]>(
       this.basePath + '?' + queryParam
+    );
+  }
+
+  getUserRoleById(id: string) {
+    const queryParam = `id=${encodeURIComponent(id)}`;
+
+    return this.apiConfigService.get<any, { userRole: string }>(
+      this.rolePath + '?' + queryParam
     );
   }
 }

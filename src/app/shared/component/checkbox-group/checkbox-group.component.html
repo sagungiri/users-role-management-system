@@ -5,6 +5,7 @@
     <mat-checkbox
       [checked]="isSelected(option)"
       (change)="selectionChange(option)"
+      [disabled]="isDisabled"
     >
       {{ option }}
     </mat-checkbox>

@@ -6,6 +6,7 @@
       class="menu-items d-flex gap-xsm align-items-center cursor-pointer p-xsm"
       [routerLink]="menuItem.routePath"
       routerLinkActive="sidebar-menu-active bg-main"
+      *ngIf="permissionService.showMenuItem(menuItem.routePath)"
     >
       <div>
         <img [src]="menuItem.menuIcon" />

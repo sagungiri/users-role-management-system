@@ -46,6 +46,10 @@
 - services moved from component to open service folder
 - auth guard implemented
 
+- permissions added for role according to admin type
+- permission guard added
+- button visibility handled according to permssion set up
+
 ## Changed
 
 - readme file updated
