@@ -54,6 +54,10 @@
 
 - readme file updated
 
+### april 7, 2025
+
+- readme file updated with primary admin credentials
+
 ## Fixed
 
 ## Removed

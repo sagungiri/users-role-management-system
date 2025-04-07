@@ -20,6 +20,15 @@ export class AuthFacade implements IAuthFacade {
     private router: Router
   ) {}
 
+  /**
+   * Login is done like this due to limitation of mockapi.io
+   * Instead of this there need to be actual login api in application
+   * and token need to be get from headers instead of body
+   * and required data for further details like permission management needto be in login api response instead
+   *
+   * @param username
+   * @param password
+   */
   login(username: string, password: string): void {
     // Call the API with username and password
     this.apiService

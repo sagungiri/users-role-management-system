@@ -33,4 +33,9 @@ Make sure you have the following installed before setting up the project:
 
    Open [http://localhost:4200/](http://localhost:4200/) in your browser.
 
-For more details, visit the [Angular CLI Documentation](https://angular.dev/tools/cli).
+## Primary User Credentials
+
+To log in as a primary admin user, use the following credentials:
+
+- **Username:** `admin1`
+- **Password:** `Admin@123`
