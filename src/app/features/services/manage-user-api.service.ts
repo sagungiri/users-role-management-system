@@ -10,6 +10,11 @@ export class ManageUserApiService {
   basePath = 'user';
   constructor(private apiConfigService: ApiConfigService) {}
 
+  // getAll(page: number, limit: number) {
+  //   const queryParams = `?page=${page}&limit=${limit}`;
+  //   return this.apiConfigService.get<null, any[]>(this.basePath + queryParams);
+  // }
+
   getAll() {
     return this.apiConfigService.get<null, any[]>(this.basePath);
   }
@@ -24,5 +29,9 @@ export class ManageUserApiService {
 
   update(id: string, data: any): Observable<ApiResponse> {
     return this.apiConfigService.put<any, any>(`${this.basePath}/${id}`, data);
+  }
+
+  delete(id: string): Observable<ApiResponse> {
+    return this.apiConfigService.delete<any, any>(`${this.basePath}/${id}`);
   }
 }

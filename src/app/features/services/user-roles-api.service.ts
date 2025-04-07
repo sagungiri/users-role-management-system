@@ -25,4 +25,8 @@ export class UserRolesApiService {
   update(id: string, data: any): Observable<ApiResponse> {
     return this.apiConfigService.put<any, any>(`${this.basePath}/${id}`, data);
   }
+
+  delete(id: string): Observable<ApiResponse> {
+    return this.apiConfigService.delete<any, any>(`${this.basePath}/${id}`);
+  }
 }

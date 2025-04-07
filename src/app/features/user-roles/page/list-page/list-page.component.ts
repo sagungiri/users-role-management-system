@@ -55,5 +55,16 @@ export class ListPageComponent {
     this.router.navigate([this.navigationRoute.FEATURE.USER_ROLE.BASE, id]);
   }
 
-  delete(id: number) {}
+  delete(item: any) {
+    if (item?.default) return;
+    this.apiService.delete(item.id).subscribe({
+      next: response => {
+        console.log('Success:', response);
+        this.pageSubject.next(this.pageSubject.value);
+      },
+      error: error => {
+        console.error('Error:', error);
+      }
+    });
+  }
 }

@@ -87,4 +87,22 @@ export class ApiConfigService {
       options
     );
   }
+
+  delete<T, R>(
+    path: string,
+    headers?: { [x: string]: string }
+  ): Observable<ApiResponse<R>> {
+    let options = {};
+    if (headers) {
+      const httpHeaders = new HttpHeaders({
+        ...headers
+      });
+      options = { headers: httpHeaders };
+    }
+
+    return this.httpClient.delete<ApiResponse<R>>(
+      ApiPathConfig.generateApiPath(path),
+      options
+    );
+  }
 }

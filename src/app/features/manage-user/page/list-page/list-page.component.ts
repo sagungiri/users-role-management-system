@@ -42,6 +42,9 @@ export class ListPageComponent {
     private apiService: ManageUserApiService
   ) {}
 
+  /**
+   * pagination not use as there is not possibility to get total count with mock api that I use
+   */
   dataset$ = this.pageSubject.pipe(
     switchMap(page => this.apiService.getAll()),
     tap(data => {})
@@ -51,12 +54,27 @@ export class ListPageComponent {
     this.router.navigate([this.navigationRoute.FEATURE.MANAGE_USER.CREATE]);
   }
 
-  onPageChange(event: any) {}
+  onPageChange(event: any) {
+    const newPage = event?.page || 1;
+    this.pageSubject.next(newPage);
+  }
 
   viewDetails() {}
 
   updateFields(id: number) {
     this.router.navigate([this.navigationRoute.FEATURE.MANAGE_USER.BASE, id]);
   }
-  delete(id: number) {}
+
+  delete(item: any) {
+    if (item?.userType === 'Primary') return;
+    this.apiService.delete(item.id).subscribe({
+      next: response => {
+        console.log('Success:', response);
+        this.pageSubject.next(this.pageSubject.value);
+      },
+      error: error => {
+        console.error('Error:', error);
+      }
+    });
+  }
 }

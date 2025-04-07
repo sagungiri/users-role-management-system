@@ -50,6 +50,10 @@
 - permission guard added
 - button visibility handled according to permssion set up
 
+### april 7, 2025
+
+- delete feature implemented in manage user and user role.
+
 ## Changed
 
 - readme file updated
