@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '@core/interface/api-response';
 import { ApiPathConfig } from '@core/config/api-path.config';
+import { ShowLoading } from '@shared/decorators/show-loading.decorator';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class ApiConfigService {
    * @returns {Observable<ApiResponse<R>>} - Observable emitting the API response.
    */
 
+  @ShowLoading()
   post<T, R>(
     path: string,
     reqParams?: T,
@@ -42,6 +44,7 @@ export class ApiConfigService {
     );
   }
 
+  @ShowLoading()
   get<T, R>(
     path: string,
     reqParams?: T,
@@ -68,6 +71,7 @@ export class ApiConfigService {
     return this.httpClient.get<R>(ApiPathConfig.generateApiPath(path), options);
   }
 
+  @ShowLoading()
   put<T, R>(
     path: string,
     reqParams: T,
@@ -88,6 +92,7 @@ export class ApiConfigService {
     );
   }
 
+  @ShowLoading()
   delete<T, R>(
     path: string,
     headers?: { [x: string]: string }

@@ -53,6 +53,7 @@
 ### april 7, 2025
 
 - delete feature implemented in manage user and user role.
+- loading implemented in api call
 
 ## Changed
 
