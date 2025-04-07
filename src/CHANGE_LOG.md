@@ -60,4 +60,8 @@
 
 ## Fixed
 
+### april 7, 2025
+
+- issue on api config service for put fixed, cancel btn not navigating in manage user fixed
+
 ## Removed

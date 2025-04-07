@@ -5,6 +5,7 @@
   <section class="form-section">
     <app-form
       (onSubmit)="submit($event)"
+      (onCancel)="onCancel()"
       [roles]="rolesData$ | async"
     ></app-form>
   </section>

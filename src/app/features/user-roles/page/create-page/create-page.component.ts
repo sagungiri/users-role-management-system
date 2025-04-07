@@ -19,9 +19,9 @@ export class CreatePageComponent {
   ) {}
 
   submit(event: any) {
-    console.log('event', event);
+    const role = { ...event, default: false };
 
-    this.apiService.create(event).subscribe({
+    this.apiService.create(role).subscribe({
       next: response => {
         this.router.navigate([this.navigationRoute.FEATURE.USER_ROLE.BASE]);
         console.log('Success:', response);

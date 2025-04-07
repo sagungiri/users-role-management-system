@@ -81,6 +81,10 @@ export class ApiConfigService {
       options = { headers: httpHeaders };
     }
 
-    return this.httpClient.put<ApiResponse<R>>(path, reqParams, options);
+    return this.httpClient.put<ApiResponse<R>>(
+      ApiPathConfig.generateApiPath(path),
+      reqParams,
+      options
+    );
   }
 }

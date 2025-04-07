@@ -40,7 +40,7 @@ export class UpdatePageComponent {
   );
 
   submit(event: any) {
-    const user = { ...event, status: 'active', userType: 'Secondary' };
+    const user = { ...event };
 
     this.apiService.update(this.id, user).subscribe({
       next: response => {
